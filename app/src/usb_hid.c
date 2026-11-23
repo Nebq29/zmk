@@ -163,7 +163,7 @@ static int set_report_cb(const struct device *dev, struct usb_setup_packet *setu
 #endif // IS_ENABLED(CONFIG_ZMK_HID_INDICATORS)
         default:
             LOG_ERR("Invalid report ID %d requested", setup->wValue & HID_GET_REPORT_ID_MASK);
-            return -EINVAL;
+            return 0;
         }
         break;
     default:
